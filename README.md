@@ -1,10 +1,12 @@
 <div align="center">
 
-<img src="assets/agent-rate-limiter-hero.png" alt="agent-rate-limiter — Vedic Arsenal" width="100%" />
+<img src="assets/agent-rate-limiter-hero.png" alt="agent-rate-limiter — Vedic Arsenal by Darshankumar Joshi" width="100%" />
 
 # 🌿 agent-rate-limiter
 
-### *नियंत्रण* — Niyantrana — control over the flow of cosmic energy
+<h3><em>नियंत्रण</em></h3>
+
+> *Niyantrana — control over the flow of cosmic energy*
 
 **Proactive rate limiting for LLM API calls — prevent 429 errors with token bucket, sliding window, ModelLimits presets, and MultiLimiter. Zero dependencies.**
 
@@ -39,6 +41,20 @@ Or clone directly:
 git clone https://github.com/darshjme/agent-rate-limiter.git
 cd agent-rate-limiter
 pip install -e .
+```
+
+## How It Works
+
+```mermaid
+flowchart LR
+    A[API Call] --> B[agent-rate-limiter]
+    B --> C{Tokens Available?}
+    C -- Yes --> D[Allow + Consume]
+    C -- No --> E{Wait or Reject?}
+    E -- Wait --> F[Sleep + Retry]
+    E -- Reject --> G[429 Error]
+    F --> B
+    style B fill:#10b981,color:#fff
 ```
 
 ## Quick Start
@@ -90,7 +106,7 @@ MIT — use freely, build freely.
 
 <div align="center">
 
-**Built with 🌿 by [Darshankumar Joshi](https://github.com/darshjme)**
+**Built with 🌿 by [Darshankumar Joshi](https://github.com/darshjme)** · [@thedarshanjoshi](https://twitter.com/thedarshanjoshi)
 
 *"कर्मण्येवाधिकारस्ते मा फलेषु कदाचन"*
 *Your right is to action alone, never to the fruits thereof.*
